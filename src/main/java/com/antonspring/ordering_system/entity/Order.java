@@ -15,7 +15,7 @@ import lombok.Setter;
 public class Order {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column (name = "order_name")
     private String orderName;
@@ -31,7 +31,7 @@ public class Order {
 
 
 
-    public Order(String orderName, int id, int quantity, double price, String status) {
+    public Order(String orderName, long id, int quantity, double price, String status) {
         this.orderName = orderName;
         this.id = id;
         this.quantity = quantity;
@@ -47,11 +47,11 @@ public class Order {
         this.orderName = orderName;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
