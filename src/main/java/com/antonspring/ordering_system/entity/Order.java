@@ -27,11 +27,11 @@ public class Order {
     private double price;
 
     @Column (name = "status")
-    private String status;
+    private Boolean status;
 
 
 
-    public Order(String orderName, long id, int quantity, double price, String status) {
+    public Order(String orderName, long id, int quantity, double price, Boolean status) {
         this.orderName = orderName;
         this.id = id;
         this.quantity = quantity;
@@ -71,11 +71,11 @@ public class Order {
         this.price = price;
     }
 
-    public String getStatus() {
+    public Boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Boolean status) {
         this.status = status;
     }
 }
