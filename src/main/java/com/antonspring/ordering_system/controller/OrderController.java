@@ -4,12 +4,8 @@ import com.antonspring.ordering_system.dto.OrderDto;
 import com.antonspring.ordering_system.service.OrderService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
@@ -23,6 +19,13 @@ public class OrderController {
     public ResponseEntity<OrderDto> addOrder(@RequestBody OrderDto orderDto) {
         OrderDto savedOrder = orderService.addOrder(orderDto);
         return new ResponseEntity<>(savedOrder, HttpStatus.CREATED);
+    }
+
+    // Build getOrder RESTAPI
+    @GetMapping("{id}")
+    public ResponseEntity<OrderDto> getOrderById(@PathVariable("id") Long Id) {
+        OrderDto orderDto = orderService.getOrderById(Id);
+        return ResponseEntity.ok(orderDto);
     }
 
 }
