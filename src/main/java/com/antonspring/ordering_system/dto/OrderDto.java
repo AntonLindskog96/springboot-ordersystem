@@ -13,5 +13,5 @@ public class OrderDto {
     private String orderName;
     private Integer quantity;
     private Double price;
-    private String status;
+    private Boolean status;
 }
