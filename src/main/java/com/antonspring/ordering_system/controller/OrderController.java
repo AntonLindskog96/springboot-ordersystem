@@ -2,8 +2,10 @@ package com.antonspring.ordering_system.controller;
 
 import com.antonspring.ordering_system.dto.OrderDto;
 import com.antonspring.ordering_system.repository.OrderRepository;
+import com.antonspring.ordering_system.service.OrderMessageSender;
 import com.antonspring.ordering_system.service.OrderService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,11 +19,17 @@ public class OrderController {
 
     private final OrderRepository orderRepository;
     private OrderService orderService;
+    private final OrderMessageSender orderMessageSender; // Borde också vara final
+
 
     // Build add order RESTAPI
     @PostMapping
     public ResponseEntity<OrderDto> addOrder(@RequestBody OrderDto orderDto) {
         OrderDto savedOrder = orderService.addOrder(orderDto);
+
+        // Skicka order som meddelande till ActiveMQ
+        orderMessageSender.sendOrderMessage(savedOrder.toString()); // Anpassa som behövs
+
         return new ResponseEntity<>(savedOrder, HttpStatus.CREATED);
     }
 
@@ -54,5 +62,5 @@ public class OrderController {
         orderService.deleteOrder(orderId);
         return ResponseEntity.ok("Order deleted");
     }
-
 }
+
