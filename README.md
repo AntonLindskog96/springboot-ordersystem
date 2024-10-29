@@ -11,6 +11,9 @@ Projektet är byggt med följande teknologier:
 - **Hibernate**: En ORM-ramverk som används för att mappa objekt till databasen.
 - **PostgreSQL**: Databashanteringssystem som används för lagring av applikationens data.
 - **Maven**: Byggverktyg som hanterar beroenden och projektstruktur.
+- **JMS (Java Message Service)**: Används för att skicka meddelanden mellan olika delar av applikationen.
+- **ActiveMQ**: En meddelandekö som implementerar JMS, vilket gör det möjligt att skicka och ta emot meddelanden asynkront.
+
 
 ## Funktioner
 API:et erbjuder följande funktioner för hantering av ordrar:
