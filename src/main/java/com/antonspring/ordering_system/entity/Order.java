@@ -78,4 +78,5 @@ public class Order {
     public void setStatus(Boolean status) {
         this.status = status;
     }
+
 }

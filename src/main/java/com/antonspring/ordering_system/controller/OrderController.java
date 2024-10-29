@@ -19,7 +19,7 @@ public class OrderController {
 
     private final OrderRepository orderRepository;
     private OrderService orderService;
-    private final OrderMessageSender orderMessageSender; // Borde också vara final
+    private final OrderMessageSender orderMessageSender;
 
 
     // Build add order RESTAPI

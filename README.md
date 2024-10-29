@@ -1,6 +1,6 @@
 # Order Management System
 
-Detta projekt är ett RESTful API för hantering av beställningar, byggt med Java och Spring Boot. Applikationen implementerar ett klassiskt CRUD (Create, Read, Update, Delete) system för att hantera ordrar i en databas. Projektet använder PostgreSQL som databashanteringssystem och Spring Data JPA tillsammans med Hibernate för ORM (Object-Relational Mapping).
+Detta projekt är ett RESTful API för hantering av beställningar, byggt med Java och Spring Boot. Applikationen implementerar ett klassiskt CRUD (Create, Read, Update, Delete) system för att hantera ordrar i en databas. Projektet använder PostgreSQL som databashanteringssystem och Spring Data JPA tillsammans med Hibernate för ORM (Object-Relational Mapping).  För att hantera meddelanden mellan olika delar av systemet används JMS (Java Message Service) med ActiveMQ som meddelandekö.
 
 
 ## Teknologier
