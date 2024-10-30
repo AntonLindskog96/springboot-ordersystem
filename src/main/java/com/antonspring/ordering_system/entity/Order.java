@@ -31,9 +31,8 @@ public class Order {
 
 
 
-    public Order(String orderName, long id, int quantity, double price, Boolean status) {
+    public Order(String orderName, int quantity, double price, Boolean status) {
         this.orderName = orderName;
-        this.id = id;
         this.quantity = quantity;
         this.price = price;
         this.status = status;
