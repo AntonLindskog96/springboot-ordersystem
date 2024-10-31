@@ -1,8 +1,6 @@
 # Order Management System
 
-Detta projekt är ett RESTful API för hantering av beställningar, byggt med Java och Spring Boot. Applikationen implementerar ett klassiskt CRUD (Create, Read, Update, Delete) system för att hantera ordrar i en databas. Projektet använder PostgreSQL som databashanteringssystem och Spring Data JPA tillsammans med Hibernate för ORM (Object-Relational Mapping).  För att hantera meddelanden mellan olika delar av systemet används JMS (Java Message Service) med ActiveMQ som meddelandekö.
-
-
+Detta projekt är ett RESTful API för hantering av beställningar, byggt med Java och Spring Boot. Det implementerar ett CRUD-system för ordrar och använder PostgreSQL som databashanteringssystem, tillsammans med Spring Data JPA och Hibernate för ORM. För att logga orderhistorik används MongoDB, vilket möjliggör flexibel hantering av historiska data. Meddelanden mellan systemets olika delar hanteras med JMS och ActiveMQ som meddelandekö.
 ## Teknologier
 Projektet är byggt med följande teknologier:
 - **Java 17**: Programmeringsspråket som används för att utveckla applikationen.
@@ -10,10 +8,12 @@ Projektet är byggt med följande teknologier:
 - **Spring Data JPA**: Tillhandahåller integration med JPA för dataåtkomst och ORM.
 - **Hibernate**: En ORM-ramverk som används för att mappa objekt till databasen.
 - **PostgreSQL**: Databashanteringssystem som används för lagring av applikationens data.
+- **MongoDB**: För att lagra och hantera OrderHistory (historik över ordrar) används MongoDB.
 - **Maven**: Byggverktyg som hanterar beroenden och projektstruktur.
-- **JMS (Java Message Service)**: Används för att skicka meddelanden mellan olika delar av applikationen.
+- **JMS**: Används för att skicka meddelanden mellan olika delar av applikationen.
 - **ActiveMQ**: En meddelandekö som implementerar JMS, vilket gör det möjligt att skicka och ta emot meddelanden asynkront.
 
+- **React Typescript**:Används för att bygga frontend-applikationen.
 
 ## Funktioner
 API:et erbjuder följande funktioner för hantering av ordrar:

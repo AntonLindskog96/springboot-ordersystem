@@ -1,5 +1,6 @@
 package com.antonspring.ordering_system;
 
+import com.antonspring.ordering_system.entity.OrderAction;
 import com.antonspring.ordering_system.entity.OrderHistory;
 import com.antonspring.ordering_system.repository.OrderHistoryRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -16,18 +17,6 @@ public class    OrderingSystemApplication {
 		SpringApplication.run(OrderingSystemApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner runner(OrderHistoryRepository repository) {
-		return args -> {
-			OrderHistory orderHistory = new OrderHistory(
-					null,
-					"created",
-					LocalDateTime.now(),
-					"Order created successfully."
-			);
 
-		repository.insert(orderHistory);
-		};
-	}
 
 }
