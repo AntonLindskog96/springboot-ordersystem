@@ -20,7 +20,7 @@ public class    OrderingSystemApplication {
 	CommandLineRunner runner(OrderHistoryRepository repository) {
 		return args -> {
 			OrderHistory orderHistory = new OrderHistory(
-					"1",
+					null,
 					"created",
 					LocalDateTime.now(),
 					"Order created successfully."

@@ -1,11 +1,9 @@
 package com.antonspring.ordering_system.controller;
 
 import com.antonspring.ordering_system.dto.OrderDto;
-import com.antonspring.ordering_system.repository.OrderRepository;
 import com.antonspring.ordering_system.service.OrderMessageSender;
 import com.antonspring.ordering_system.service.OrderService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,9 +13,9 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/orders")
+@CrossOrigin(origins = "http://localhost:3000")
 public class OrderController {
 
-    private final OrderRepository orderRepository;
     private OrderService orderService;
     private final OrderMessageSender orderMessageSender;
 
