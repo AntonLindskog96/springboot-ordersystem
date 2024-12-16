@@ -18,7 +18,6 @@ import java.util.List;
 public class CustomerController {
 
     private CustomerService customerService;
-    private final CustomerRepository customerRepository;
 
     @PostMapping
     public ResponseEntity<CustomerDto> addCustomer (@RequestBody CustomerDto customerDto) {
